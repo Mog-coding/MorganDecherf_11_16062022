@@ -1,7 +1,9 @@
+import './HomePage.css'
+
 function HomePage(){
     return(
         <>
-        <h1>HomePage</h1>
+        <h1 className="homePage">HomePage</h1>
         </>
     )
 }

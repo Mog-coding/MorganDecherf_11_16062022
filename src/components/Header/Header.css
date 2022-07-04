@@ -1,6 +1,11 @@
 header{
     display: flex;
     justify-content: space-between;
+    padding: 32px 100px 16px 100px;
+}
+header nav{
+    display: flex;
+    align-items: center;
 }
 header a{
     text-decoration: none;
@@ -9,4 +14,7 @@ header a{
 }
 header a:hover{
     text-decoration: underline;
+}
+.linkAccueil{
+    margin-right: 64px;
 }
