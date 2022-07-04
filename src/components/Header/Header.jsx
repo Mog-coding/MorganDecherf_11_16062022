@@ -1,12 +1,22 @@
 import { Link } from 'react-router-dom'
 
-function Header(){
+import './Header.css'
+import logoKasa from '../../assets/logoKasa.svg'
 
-    return(
-        <nav>
-            <Link to="/">Accueil</Link>
-            <Link to="/aboutuspage">A propos</Link>
-        </nav>
+
+function Header() {
+
+    return (
+        <header>
+            <div className='logoKasa'>
+                <img src={logoKasa} alt='logo Kasa' />
+            </div>
+
+            <nav>
+                <Link to="/">Accueil</Link>
+                <Link to="/aboutus">A propos</Link>
+            </nav>
+        </header>
     )
 }
 

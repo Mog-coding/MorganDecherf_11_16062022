@@ -1,0 +1,12 @@
+header{
+    display: flex;
+    justify-content: space-between;
+}
+header a{
+    text-decoration: none;
+    color: #FF6060;
+    font-size: 1.55em;
+}
+header a:hover{
+    text-decoration: underline;
+}

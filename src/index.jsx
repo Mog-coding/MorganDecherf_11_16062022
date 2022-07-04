@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
+import './index.css'
 import Header from './components/Header/Header'
 import HomePage from './pages/HomePage/HomePage';
 import HousingPage from './pages/HousingPage/HousingPage';
 import AboutUsPage from './pages/AboutUsPage/AboutUsPage';
 import Error404 from './pages/Error404/Error404';
-import CarouselComponent from './components/CarouselComponent/CarouselComponent';
-
+import Footer from './components/Footer/Footer'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,18 +18,18 @@ root.render(
       <Switch>
         <Route exact path="/">
           <HomePage />
-          <CarouselComponent />
         </Route>
-        <Route path="/housingpage">
+        <Route path="/housing">
           <HousingPage />
         </Route>
-        <Route path="/aboutuspage">
+        <Route path="/aboutus">
           <AboutUsPage />
         </Route>
         <Route>
           <Error404 />
         </Route>
       </Switch>
+      <Footer />
     </Router>
   </React.StrictMode>
 );
