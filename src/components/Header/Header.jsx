@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import './Header.css'
-import logoKasa from '../../assets/logoKasa.svg'
+import logoKasaMobile from '../../assets/logoKasaMobile.svg'
 
 
 function Header() {
@@ -9,12 +9,12 @@ function Header() {
     return (
         <header>
             <div className='logoKasa'>
-                <img src={logoKasa} alt='logo Kasa' />
+                <img src={logoKasaMobile} alt='logo Kasa' />
             </div>
 
             <nav>
-                <Link className="linkAccueil" to="/">Accueil</Link>
-                <Link to="/aboutus">A propos</Link>
+                <Link className="linkAccueil" to="/">ACCUEIL</Link>
+                <Link to="/aboutus">A PROPOS </Link>
             </nav>
         </header>
     )

@@ -1,0 +1,24 @@
+.banner{
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 111px;
+    border-radius: 12px;
+    padding: 0 20px;
+}
+.banner img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    filter: brightness(68%);
+    border-radius: 12px;
+
+}
+.bannerText{
+    position: absolute;
+    font-size: 1.5em;
+    font-weight: normal;
+    color: white;
+    z-index: 2;
+    margin-left: 15px;
+}

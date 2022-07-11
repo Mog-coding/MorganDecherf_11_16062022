@@ -19,7 +19,7 @@ root.render(
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route path="/housing">
+        <Route path="/housing/:id">
           <HousingPage />
         </Route>
         <Route path="/aboutus">
