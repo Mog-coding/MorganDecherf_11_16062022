@@ -1,10 +1,10 @@
 import './Banner.css'
 
-function Banner({title, image}){
+function Banner({title, image, description, height}){
     return(
-        <section className="banner">
+        <section className="banner" style={{height: height}}>
             <h1 className='bannerText'>{title}</h1>
-            <img src={image} alt="Rochers en bord de mer" />
+            <img src={image} alt={description} />
         </section>
     )
 }
