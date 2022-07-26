@@ -4,3 +4,17 @@ body{
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
 }
+
+
+/* classes globales */
+.hide{
+    display: none;
+}
+.appear{
+    display: block;
+}
+.rotate {
+    transform: rotate(180deg);
+  }
+
+/* color */
