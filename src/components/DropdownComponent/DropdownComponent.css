@@ -1,13 +1,13 @@
-.dropdownSection{
+.dropdownSection {
     padding-bottom: 20px;
 }
-.dropdownHeading{
+.dropdownHeading {
     position: relative;
-    background-color: #FF6060;
+    background-color: #ff6060;
     color: white;
     border-radius: 5px;
 }
-.dropdownHeading h2{
+.dropdownHeading h2 {
     display: flex;
     align-items: center;
     height: 30px;
@@ -16,19 +16,19 @@
     font-weight: unset;
     padding-left: 12px;
 }
-.dropdownContent{
-    background-color: #F6F6F6;
-    color: #FF6060;
+.dropdownContent {
+    background-color: #f6f6f6;
+    color: #ff6060;
     border-radius: 0 0 5px 5px;
     padding: 19px 7px 53px 12px;
 }
-.dropdownContent p{
+.dropdownContent p {
     margin: 0px;
     font-size: 0.72em;
     line-height: 1.4em;
 }
 
-.chevronUp{
+.chevronUp {
     position: absolute;
     pointer-events: none;
     background-size: 15px 15px;

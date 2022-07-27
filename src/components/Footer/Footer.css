@@ -1,4 +1,4 @@
-footer{
+footer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,9 +9,9 @@ footer{
     margin-top: 20px;
 }
 
-footer img{
+footer img {
     padding-top: 61px;
 }
-footer p{
+footer p {
     margin-top: 30px;
 }

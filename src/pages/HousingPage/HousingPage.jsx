@@ -1,9 +1,9 @@
-function HousingPage(){
-    return(
+function HousingPage() {
+    return (
         <>
-        <h1>HousingPage</h1>
+            <h1>HousingPage</h1>
         </>
-    )
+    );
 }
 
-export default HousingPage
+export default HousingPage;

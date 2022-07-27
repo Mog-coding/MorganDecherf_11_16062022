@@ -1,9 +1,9 @@
-function Error404(){
-    return(
+function Error404() {
+    return (
         <>
-        <h1>Error404</h1>
+            <h1>Error404</h1>
         </>
-    )
+    );
 }
 
-export default Error404
+export default Error404;

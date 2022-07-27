@@ -1,21 +1,21 @@
-header{
+header {
     display: flex;
     justify-content: space-between;
     padding: 20px 20px 12px 20px;
 }
-header nav{
+header nav {
     display: flex;
     align-items: center;
 }
-header a{
+header a {
     text-decoration: none;
-    color: #FF6060;
+    color: #ff6060;
     font-size: 0.8em;
     font-weight: bold;
 }
-header a:hover{
+header a:hover {
     text-decoration: underline;
 }
-.linkAccueil{
+.linkAccueil {
     margin-right: 15px;
 }

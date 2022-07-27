@@ -1,20 +1,19 @@
-body{
+body {
     max-width: 1440px;
     margin: auto;
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
 }
 
-
 /* classes globales */
-.hide{
+.hide {
     display: none;
 }
-.appear{
+.appear {
     display: block;
 }
 .rotate {
     transform: rotate(180deg);
-  }
+}
 
 /* color */

@@ -1,8 +1,5 @@
-function CarouselComponent(){
-
-    return(
-        <div>CarouselComponent</div>
-    )
+function CarouselComponent() {
+    return <div>CarouselComponent</div>;
 }
 
-export default CarouselComponent
+export default CarouselComponent;
