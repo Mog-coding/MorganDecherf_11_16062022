@@ -10,6 +10,9 @@ article p {
     z-index: 2;
     color: white;
     bottom: 0;
+    margin: 20px;
+    font-size: 1.1em;
+    width: 45%;
 }
 
 article img {
