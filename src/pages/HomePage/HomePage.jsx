@@ -15,21 +15,23 @@ function HomePage() {
     }, []);
 
     return (
-        <main>
+        <div>
             <Banner
                 image={imgBanHome}
                 title="Chez vous, partout et ailleurs"
                 description="Rochers en bord de mer"
                 height="111px"
             />
-            {locationData.map(({ id, cover, title }) => {
-                return (
-                    <Link key={id} to={`/housing/${id}`}>
-                        <LocationCard imgCardUrl={cover} title={title} />
-                    </Link>
-                );
-            })}
-        </main>
+            <main>
+                {locationData.map(({ id, cover, title }) => {
+                    return (
+                        <Link key={id} to={`/housing/${id}`}>
+                            <LocationCard imgCardUrl={cover} title={title} />
+                        </Link>
+                    );
+                })}
+            </main>
+        </div>
     );
 }
 
