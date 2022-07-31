@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 import './CarouselComponent.css';
 import vectorLeft from '../../assets/icon/vectorLeft.svg';
@@ -6,11 +6,24 @@ import vectorRight from '../../assets/icon/vectorRight.svg';
 
 export default function CarouselComponent({ locationImgArr }) {
     const [locationImg, updatelocationImg] = useState(locationImgArr[0]);
+    const chevronL = useRef(null);
+    const chevronR = useRef(null);
+
+    // si une seule image, supression chevrons next, previous
+    useEffect(() => {
+        const elChevronL = chevronL.current;
+        const elChevronR = chevronR.current;
+        if (locationImgArr.length === 1) {
+            elChevronL.classList.add('hide');
+            elChevronR.classList.add('hide');
+        }
+    }, []);
 
     return (
         <section className="carouselSection">
             <img className="carouselImg" src={locationImg} alt={locationImg} />
             <div
+                ref={chevronL}
                 className="vectorLeft"
                 onClick={() =>
                     updatelocationImg(
@@ -25,6 +38,7 @@ export default function CarouselComponent({ locationImgArr }) {
                 <img src={vectorLeft} alt="" />
             </div>
             <div
+                ref={chevronR}
                 className="vectorRight"
                 onClick={() =>
                     updatelocationImg(
