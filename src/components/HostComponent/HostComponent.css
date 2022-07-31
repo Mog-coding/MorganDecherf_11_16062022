@@ -1,0 +1,13 @@
+.hostContainer {
+    display: flex;
+}
+.hostName {
+    font-size: 0.82em;
+    width: 65px;
+    margin: 0px;
+}
+.hostImg {
+    height: 33px;
+    width: 33px;
+    border-radius: 50%;
+}

@@ -15,7 +15,7 @@ function HomePage() {
     }, []);
 
     return (
-        <div>
+        <>
             <Banner
                 image={imgBanHome}
                 title="Chez vous, partout et ailleurs"
@@ -31,7 +31,7 @@ function HomePage() {
                     );
                 })}
             </main>
-        </div>
+        </>
     );
 }
 

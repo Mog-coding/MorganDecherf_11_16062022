@@ -1,5 +1,6 @@
 import starEmpty from '../../assets/icon/star_empty.svg';
 import starFull from '../../assets/icon/star_full.svg';
+import './RatingComponent.css';
 
 function RatingComponent({ starNb }) {
     let arrayRating = ['empty', 'empty', 'empty', 'empty', 'empty'];
