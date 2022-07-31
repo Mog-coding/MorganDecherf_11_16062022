@@ -27,42 +27,40 @@ function HousingPage() {
     return (
         <>
             {Object.entries(locationData).length !== 0 ? (
-                <CarouselComponent locationImg={locationData.pictures} />
+                <CarouselComponent locationImgArr={locationData.pictures} />
             ) : null}
+            <main className="housingMain">
+                <h1 className="housingTitle">{locationData.title}</h1>
+                <p className="housingLocation">{locationData.location}</p>
 
-            <h1>{locationData.title}</h1>
-            <p>{locationData.location}</p>
+                <div className="housingPageTags">
+                    {Object.entries(locationData).length !== 0
+                        ? locationData.tags.map((elTag, index) => {
+                              return (
+                                  <TagComponent
+                                      tag={elTag}
+                                      key={`${elTag}-${index}`}
+                                  />
+                              );
+                          })
+                        : null}
+                </div>
+                <div className="ratingHostCont">
+                    <RatingComponent starNb={parseInt(locationData.rating)} />
 
-            <div className="housingPageTags">
-                {Object.entries(locationData).length !== 0
-                    ? locationData.tags.map((elTag, index) => {
-                          return (
-                              <TagComponent
-                                  tag={elTag}
-                                  key={`${elTag}-${index}`}
-                              />
-                          );
-                      })
-                    : null}
-            </div>
-            <div>
-                <RatingComponent starNb={parseInt(locationData.rating)} />
-            </div>
-            <div>
-                {Object.entries(locationData).length !== 0 ? (
-                    <HostComponent
-                        renterName={locationData.host.name}
-                        renterImg={locationData.host.picture}
-                    />
-                ) : null}
-            </div>
+                    {Object.entries(locationData).length !== 0 ? (
+                        <HostComponent
+                            renterName={locationData.host.name}
+                            renterImg={locationData.host.picture}
+                        />
+                    ) : null}
+                </div>
+            </main>
             <div>
                 <DropdownComponent
                     heading="Description"
                     content={locationData.description}
                 />
-            </div>
-            <div>
                 <DropdownComponent
                     heading="Équipements"
                     content={locationData.equipments}
