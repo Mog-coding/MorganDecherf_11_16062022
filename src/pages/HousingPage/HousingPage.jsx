@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Navigate } from 'react';
 
 import './HousingPage.css';
 import CarouselComponent from '../../components/CarouselComponent/CarouselComponent';
@@ -22,50 +22,62 @@ function HousingPage() {
                 return setLocationData(housingFound);
             })
             .catch((error) => console.log(error));
-    }, []);
+    });
 
     return (
         <>
-            {Object.entries(locationData).length !== 0 ? (
-                <CarouselComponent locationImgArr={locationData.pictures} />
-            ) : null}
-            <main className="housingMain">
-                <h1 className="housingTitle">{locationData.title}</h1>
-                <p className="housingLocation">{locationData.location}</p>
-
-                <div className="housingPageTags">
-                    {Object.entries(locationData).length !== 0
-                        ? locationData.tags.map((elTag, index) => {
-                              return (
-                                  <TagComponent
-                                      tag={elTag}
-                                      key={`${elTag}-${index}`}
-                                  />
-                              );
-                          })
-                        : null}
-                </div>
-                <div className="ratingHostCont">
-                    <RatingComponent starNb={parseInt(locationData.rating)} />
-
+            {locationData ? (
+                <div>
                     {Object.entries(locationData).length !== 0 ? (
-                        <HostComponent
-                            renterName={locationData.host.name}
-                            renterImg={locationData.host.picture}
+                        <CarouselComponent
+                            locationImgArr={locationData.pictures}
                         />
                     ) : null}
+                    <main className="housingMain">
+                        <h1 className="housingTitle">{locationData.title}</h1>
+                        <p className="housingLocation">
+                            {locationData.location}
+                        </p>
+
+                        <div className="housingPageTags">
+                            {Object.entries(locationData).length !== 0
+                                ? locationData.tags.map((elTag, index) => {
+                                      return (
+                                          <TagComponent
+                                              tag={elTag}
+                                              key={`${elTag}-${index}`}
+                                          />
+                                      );
+                                  })
+                                : null}
+                        </div>
+                        <div className="ratingHostCont">
+                            <RatingComponent
+                                starNb={parseInt(locationData.rating)}
+                            />
+
+                            {Object.entries(locationData).length !== 0 ? (
+                                <HostComponent
+                                    renterName={locationData.host.name}
+                                    renterImg={locationData.host.picture}
+                                />
+                            ) : null}
+                        </div>
+                    </main>
+                    <div>
+                        <DropdownComponent
+                            heading="Description"
+                            content={locationData.description}
+                        />
+                        <DropdownComponent
+                            heading="Équipements"
+                            content={locationData.equipments}
+                        />
+                    </div>
                 </div>
-            </main>
-            <div>
-                <DropdownComponent
-                    heading="Description"
-                    content={locationData.description}
-                />
-                <DropdownComponent
-                    heading="Équipements"
-                    content={locationData.equipments}
-                />
-            </div>
+            ) : (
+                <Navigate path="/404" />
+            )}
         </>
     );
 }

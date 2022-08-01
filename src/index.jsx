@@ -25,7 +25,7 @@ root.render(
                 <Route path="/aboutus">
                     <AboutUsPage />
                 </Route>
-                <Route>
+                <Route path="/404">
                     <Error404 />
                 </Route>
             </Switch>

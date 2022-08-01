@@ -22,10 +22,14 @@ function HomePage() {
                 description="Rochers en bord de mer"
                 height="111px"
             />
-            <main>
+            <main className="homeMain">
                 {locationData.map(({ id, cover, title }) => {
                     return (
-                        <Link key={id} to={`/housing/${id}`}>
+                        <Link
+                            key={id}
+                            to={`/housing/${id}`}
+                            className="homeCard"
+                        >
                             <LocationCard imgCardUrl={cover} title={title} />
                         </Link>
                     );
