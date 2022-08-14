@@ -1,23 +1,23 @@
 import './DropdownComponent.css';
 import chevronUp from '../../assets/icon/chevron_haut.svg';
 
-function toggleDropdown(para) {
-    // sélection contenu et icon du dropdown
-    const dropContent = para.parentElement.nextElementSibling;
-    const dropIcon = para.previousElementSibling;
-
-    if (dropContent.classList.contains('hide')) {
-        dropContent.classList.remove('hide');
-        dropContent.classList.add('appear');
-        dropIcon.classList.add('rotate');
-    } else {
-        dropContent.classList.remove('appear');
-        dropContent.classList.add('hide');
-        dropIcon.classList.remove('rotate');
-    }
-}
-
 function DropdownComponent({ heading, content }) {
+    function toggleDropdown(para) {
+        // sélection contenu et icon du dropdown
+        const dropContent = para.parentElement.nextElementSibling;
+        const dropIcon = para.previousElementSibling;
+
+        if (dropContent.classList.contains('hide')) {
+            dropContent.classList.remove('hide');
+            dropContent.classList.add('appear');
+            dropIcon.classList.add('rotate');
+        } else {
+            dropContent.classList.remove('appear');
+            dropContent.classList.add('hide');
+            dropIcon.classList.remove('rotate');
+        }
+    }
+
     return (
         <section className="dropdownSection">
             <div
