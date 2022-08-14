@@ -1,5 +1,7 @@
 import { useParams } from 'react-router-dom';
-import { useState, useEffect, Navigate } from 'react';
+import { Navigate } from 'react';
+import { useFetch } from '../../utils/customHook/useFetch/useFetch';
+import { Loader } from '../../utils/style/Loader/Loader';
 
 import './HousingPage.css';
 import CarouselComponent from '../../components/CarouselComponent/CarouselComponent';
@@ -11,28 +13,27 @@ import DropdownComponent from '../../components/DropdownComponent/DropdownCompon
 function HousingPage() {
     const { id } = useParams();
 
-    const [locationData, setLocationData] = useState({});
-    useEffect(() => {
-        fetch('/location.json')
-            .then((resp) => resp.json())
-            .then((responseData) => {
-                const housingFound = responseData.find((para) => {
-                    return para.id === id;
-                });
-                return setLocationData(housingFound);
-            })
-            .catch((error) => console.log(error));
-    });
+    const { data, isLoading, error } = useFetch('/location.json');
+
+    let locationData = data;
+
+    if (!isLoading) {
+        locationData = data.find((para) => {
+            return para.id === id;
+        });
+    }
+    if (error) {
+        return <div> Erreur fetch </div>;
+    }
 
     return (
         <>
-            {locationData ? (
+            {isLoading ? (
+                <Loader />
+            ) : (
                 <div>
-                    {Object.entries(locationData).length !== 0 ? (
-                        <CarouselComponent
-                            locationImgArr={locationData.pictures}
-                        />
-                    ) : null}
+                    <CarouselComponent locationImgArr={locationData.pictures} />
+
                     <main className="housingMain">
                         <h1 className="housingTitle">{locationData.title}</h1>
                         <p className="housingLocation">
@@ -40,28 +41,24 @@ function HousingPage() {
                         </p>
 
                         <div className="housingPageTags">
-                            {Object.entries(locationData).length !== 0
-                                ? locationData.tags.map((elTag, index) => {
-                                      return (
-                                          <TagComponent
-                                              tag={elTag}
-                                              key={`${elTag}-${index}`}
-                                          />
-                                      );
-                                  })
-                                : null}
+                            {locationData.tags.map((elTag, index) => {
+                                return (
+                                    <TagComponent
+                                        tag={elTag}
+                                        key={`${elTag}-${index}`}
+                                    />
+                                );
+                            })}
                         </div>
                         <div className="ratingHostCont">
                             <RatingComponent
                                 starNb={parseInt(locationData.rating)}
                             />
 
-                            {Object.entries(locationData).length !== 0 ? (
-                                <HostComponent
-                                    renterName={locationData.host.name}
-                                    renterImg={locationData.host.picture}
-                                />
-                            ) : null}
+                            <HostComponent
+                                renterName={locationData.host.name}
+                                renterImg={locationData.host.picture}
+                            />
                         </div>
                     </main>
                     <div>
@@ -75,11 +72,16 @@ function HousingPage() {
                         />
                     </div>
                 </div>
-            ) : (
-                <Navigate path="/404" />
             )}
         </>
     );
 }
 
 export default HousingPage;
+
+// {Object.entries(locationData).length !== 0 ? (
+//     <HostComponent
+//         renterName={locationData.host.name}
+//         renterImg={locationData.host.picture}
+//     />
+// ) : null}
