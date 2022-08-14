@@ -1,0 +1,23 @@
+.contLoader {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+.loader {
+    padding: 10px;
+    border: 6px solid #ff6060;
+    border-bottom-color: transparent;
+    border-radius: 22px;
+    animation: rotateLoader 1s infinite linear;
+    height: 0;
+    width: 0;
+}
+@keyframes rotateLoader {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
