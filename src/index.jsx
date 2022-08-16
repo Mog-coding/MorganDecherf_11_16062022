@@ -9,7 +9,6 @@ import HousingPage from './pages/HousingPage/HousingPage';
 import AboutUsPage from './pages/AboutUsPage/AboutUsPage';
 import Error404 from './pages/Error404/Error404';
 import Footer from './components/Footer/Footer';
-import Truc from './pages/truc/Truc';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
