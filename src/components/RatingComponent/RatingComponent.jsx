@@ -9,23 +9,25 @@ function RatingComponent({ starNb }) {
     }
     return (
         <div>
-            {arrayRating.map((el, index) => {
-                return el === 'empty' ? (
-                    <img
-                        className="starEmpty"
-                        src={starEmpty}
-                        alt=""
-                        key={`${el}-${index}`}
-                    />
-                ) : (
-                    <img
-                        className="starFull"
-                        src={starFull}
-                        alt=""
-                        key={`${el}-${index}`}
-                    />
-                );
-            })}
+            {
+                arrayRating.map((el, index) => {
+                    return el === 'empty' ? (
+                        <img
+                            className="starEmpty"
+                            src={starEmpty}
+                            alt=""
+                            key={`${el}-${index}`}
+                        />
+                    ) : (
+                        <img
+                            className="starFull"
+                            src={starFull}
+                            alt=""
+                            key={`${el}-${index}`}
+                        />
+                    );
+                })
+            }
         </div>
     );
 }

@@ -22,6 +22,7 @@ function HousingPage() {
             return para.id === id;
         });
     }
+
     if (error) {
         return <div> Erreur fetch </div>;
     }
@@ -44,14 +45,16 @@ function HousingPage() {
                             </p>
 
                             <div className="housingPageTags">
-                                {locationData.tags.map((elTag, index) => {
-                                    return (
-                                        <TagComponent
-                                            tag={elTag}
-                                            key={`${elTag}-${index}`}
-                                        />
-                                    );
-                                })}
+                                {
+                                    locationData.tags.map((elTag, index) => {
+                                        return (
+                                            <TagComponent
+                                                tag={elTag}
+                                                key={`${elTag}-${index}`}
+                                            />
+                                        );
+                                    })
+                                }
                             </div>
                         </div>
                         <div className="ratingHostCont">

@@ -25,26 +25,30 @@ function HomePage() {
                     height="111px"
                 />
             </div>
-            {isLoading ? (
-                <Loader />
-            ) : (
-                <main className="homeMain">
-                    {data.map(({ id, cover, title }) => {
-                        return (
-                            <Link
-                                key={id}
-                                to={`/housing/${id}`}
-                                className="homeCard"
-                            >
-                                <LocationCard
-                                    imgCardUrl={cover}
-                                    title={title}
-                                />
-                            </Link>
-                        );
-                    })}
-                </main>
-            )}
+            {
+                isLoading ? (
+                    <Loader />
+                ) : (
+                    <main className="homeMain">
+                        {
+                            data.map(({ id, cover, title }) => {
+                                return (
+                                    <Link
+                                        key={id}
+                                        to={`/housing/${id}`}
+                                        className="homeCard"
+                                    >
+                                        <LocationCard
+                                            imgCardUrl={cover}
+                                            title={title}
+                                        />
+                                    </Link>
+                                );
+                            })
+                        }
+                    </main>
+                )
+            }
         </>
     );
 }

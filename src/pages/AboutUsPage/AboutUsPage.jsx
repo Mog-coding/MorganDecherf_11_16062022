@@ -31,15 +31,17 @@ function AboutUsPage() {
         <div>
             <Banner title="" image={imgBanAbout} height="223px" />
             <main className="aboutUsDropdowns">
-                {aboutUsData.map((el, index) => {
-                    return (
-                        <DropDownComponent
-                            heading={el.heading}
-                            content={el.description}
-                            key={`${el.heading}-${index}`}
-                        />
-                    );
-                })}
+                {
+                    aboutUsData.map((el, index) => {
+                        return (
+                            <DropDownComponent
+                                heading={el.heading}
+                                content={el.description}
+                                key={`${el.heading}-${index}`}
+                            />
+                        );
+                    })
+                }
             </main>
         </div>
     );

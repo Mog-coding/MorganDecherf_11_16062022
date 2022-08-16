@@ -6,8 +6,8 @@ import vectorRight from '../../assets/icon/vectorRight.svg';
 
 export default function CarouselComponent({ locationImgArr }) {
     const [locationImg, updatelocationImg] = useState(locationImgArr[0]);
-    const chevronL = useRef(null);
-    const chevronR = useRef(null);
+    const chevronL = useRef();
+    const chevronR = useRef();
 
     // si une seule image, supression chevrons next, previous
     useEffect(() => {
@@ -16,8 +16,8 @@ export default function CarouselComponent({ locationImgArr }) {
         if (locationImgArr.length === 1) {
             elChevronL.classList.add('hide');
             elChevronR.classList.add('hide');
-        }
-    }, []);
+        }        
+    });
 
     return (
         <section className="carouselSection">

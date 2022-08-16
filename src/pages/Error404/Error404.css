@@ -27,6 +27,10 @@
 .errorSection a {
     color: #ff6060;
     font-size: 0.9em;
+    text-decoration: none;
+}
+.errorSection a:hover {
+    text-decoration: underline;
 }
 
 /* medias queries */
