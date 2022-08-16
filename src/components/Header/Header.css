@@ -19,3 +19,19 @@ header a:hover {
 .linkAccueil {
     margin-right: 15px;
 }
+
+/* medias queries */
+@media screen and (min-width: 1000px) {
+    header {
+        padding-top: 40px;
+    }
+    .logoKasaHeader img {
+        height: 68px;
+    }
+    header a {
+        font-size: 1.3em;
+    }
+    .linkAccueil {
+        margin-right: 65px;
+    }
+}

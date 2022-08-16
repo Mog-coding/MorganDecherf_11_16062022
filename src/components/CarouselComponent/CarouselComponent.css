@@ -16,12 +16,39 @@
     position: absolute;
 }
 .vectorLeft {
+    width: 12px;
+    height: 20px;
     top: 98px;
     left: 0px;
     padding: 30px 30px 30px 6px;
 }
 .vectorRight {
+    width: 12px;
+    height: 20px;
     top: 98px;
     right: 0px;
     padding: 30px 6px 30px 30px;
+}
+
+/* medias queries */
+@media screen and (min-width: 1000px) {
+    .carouselSection {
+        height: 415px;
+        padding: 4px 0 8px 0;
+    }
+    .carouselImg {
+        border-radius: 27px;
+    }
+    .vectorLeft {
+        width: 50px;
+        height: 80px;
+        top: 139px;
+        left: 16px;
+    }
+    .vectorRight {
+        width: 50px;
+        height: 80px;
+        top: 139px;
+        right: 16px;
+    }
 }

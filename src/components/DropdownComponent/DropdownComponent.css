@@ -16,10 +16,11 @@
     font-weight: unset;
     padding-left: 12px;
 }
-.chevronUp {
+.chevron {
     position: absolute;
     pointer-events: none;
-    background-size: 15px 15px;
+    width: 17px;
+    height: 9px;
     right: 7px;
     top: 10px;
 }
@@ -42,4 +43,36 @@
 }
 .dropdownContent li {
     line-height: 20px;
+}
+
+/* medias queries */
+@media screen and (min-width: 1000px) {
+    .dropdownSection {
+        padding: 0 20px 30px 20px;
+    }
+    .dropdownHeading {
+        border-radius: 9px;
+    }
+    .dropdownHeading h2 {
+        height: 50px;
+        font-size: 1.4em;
+        padding-left: 19px;
+    }
+    .chevron {
+        width: 31px;
+        height: 15px;
+        right: 29px;
+        top: 18px;
+    }
+    .dropdownContent p {
+        font-size: 1.3em;
+        padding: 29px 7px 10px 20px;
+    }
+    .dropdownContent ul {
+        font-size: 1.3em;
+        padding: 30px 7px 10px 19px;
+    }
+    .dropdownContent li {
+        line-height: 28px;
+    }
 }

@@ -6,7 +6,7 @@ import logoKasaMobile from '../../assets/logoKasaMobile.svg';
 function Header() {
     return (
         <header>
-            <div className="logoKasa">
+            <div className="logoKasaHeader">
                 <img src={logoKasaMobile} alt="logo Kasa" />
             </div>
 

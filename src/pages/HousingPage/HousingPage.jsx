@@ -35,20 +35,24 @@ function HousingPage() {
                     <CarouselComponent locationImgArr={locationData.pictures} />
 
                     <main className="housingMain">
-                        <h1 className="housingTitle">{locationData.title}</h1>
-                        <p className="housingLocation">
-                            {locationData.location}
-                        </p>
+                        <div>
+                            <h1 className="housingTitle">
+                                {locationData.title}
+                            </h1>
+                            <p className="housingLocation">
+                                {locationData.location}
+                            </p>
 
-                        <div className="housingPageTags">
-                            {locationData.tags.map((elTag, index) => {
-                                return (
-                                    <TagComponent
-                                        tag={elTag}
-                                        key={`${elTag}-${index}`}
-                                    />
-                                );
-                            })}
+                            <div className="housingPageTags">
+                                {locationData.tags.map((elTag, index) => {
+                                    return (
+                                        <TagComponent
+                                            tag={elTag}
+                                            key={`${elTag}-${index}`}
+                                        />
+                                    );
+                                })}
+                            </div>
                         </div>
                         <div className="ratingHostCont">
                             <RatingComponent
@@ -61,16 +65,20 @@ function HousingPage() {
                             />
                         </div>
                     </main>
-                    <div>
-                        <DropdownComponent
-                            heading="Description"
-                            content={locationData.description}
-                        />
-                        <DropdownComponent
-                            heading="Équipements"
-                            content={locationData.equipments}
-                        />
-                    </div>
+                    <section className="housingContDropdown">
+                        <div className="housingDropdown">
+                            <DropdownComponent
+                                heading="Description"
+                                content={locationData.description}
+                            />
+                        </div>
+                        <div className="housingDropdown">
+                            <DropdownComponent
+                                heading="Équipements"
+                                content={locationData.equipments}
+                            />
+                        </div>
+                    </section>
                 </div>
             )}
         </>

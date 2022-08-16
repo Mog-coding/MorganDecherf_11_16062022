@@ -24,3 +24,34 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
+
+/* medias queries */
+@media screen and (min-width: 1000px) {
+    .housingMain {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 16px;
+    }
+    .housingTitle {
+        font-size: 2em;
+        margin: 18px 0 13px 0;
+    }
+    .housingLocation {
+        font-size: 1.1em;
+        margin: 0 0 24px 0;
+    }
+    .ratingHostCont {
+        display: flex;
+        flex-direction: column-reverse;
+        padding-top: 0px;
+        padding-bottom: 24px;
+    }
+    .housingContDropdown {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 14px;
+    }
+    .housingDropdown {
+        width: 48.6%;
+    }
+}

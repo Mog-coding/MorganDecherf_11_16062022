@@ -10,3 +10,11 @@
     color: white;
     font-size: 0.55em;
 }
+
+@media screen and (min-width: 1000px) {
+    .tagComp {
+        height: 25px;
+        font-size: 0.9em;
+        border-radius: 9px;
+    }
+}

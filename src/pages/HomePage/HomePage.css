@@ -1,27 +1,30 @@
 .homeMain {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background: #f6f6f6;
-    margin: 40px 20px 30px 20px;
-    padding: 30px;
-    border-radius: 19px;
+    flex-direction: column;
+    background: unset;
+    margin: 0px;
+    padding: 0px;
 }
 .homeCard {
-    width: 33%;
+    width: 100%;
 }
 
 /* medias queries */
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 1000px) {
     .homeMain {
         display: flex;
-        flex-direction: column;
-        background: unset;
-        margin: 0px;
-        padding: 0px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background: #f6f6f6;
+        margin: 40px 20px 30px 20px;
+        padding: 30px 25px;
+        border-radius: 19px;
     }
     .homeCard {
-        width: 100%;
+        width: 33%;
+    }
+    .homeBanner {
+        margin-top: 16px;
     }
 }

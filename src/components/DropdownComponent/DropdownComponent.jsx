@@ -1,5 +1,5 @@
 import './DropdownComponent.css';
-import chevronUp from '../../assets/icon/chevron_haut.svg';
+import chevron from '../../assets/icon/chevron.svg';
 
 function DropdownComponent({ heading, content }) {
     function toggleDropdown(para) {
@@ -24,7 +24,7 @@ function DropdownComponent({ heading, content }) {
                 onClick={(e) => toggleDropdown(e.target)}
                 className="dropdownHeading"
             >
-                <img className="chevronUp" src={chevronUp} alt="" />
+                <img className="chevron" src={chevron} alt="" />
                 <h2>{heading}</h2>
             </div>
             <div className="dropdownContent hide">

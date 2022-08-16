@@ -1,3 +1,9 @@
 .aboutUsDropdowns {
     padding: 20px 0 20px 0;
 }
+/* medias queries */
+@media screen and (min-width: 1000px) {
+    .aboutUsDropdowns {
+        padding: 30px 110px 20px 110px;
+    }
+}

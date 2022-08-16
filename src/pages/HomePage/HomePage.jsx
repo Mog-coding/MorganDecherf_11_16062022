@@ -17,12 +17,14 @@ function HomePage() {
 
     return (
         <>
-            <Banner
-                image={imgBanHome}
-                title="Chez vous, partout et ailleurs"
-                description="Rochers en bord de mer"
-                height="111px"
-            />
+            <div className="homeBanner">
+                <Banner
+                    image={imgBanHome}
+                    title="Chez vous, partout et ailleurs"
+                    description="Rochers en bord de mer"
+                    height="111px"
+                />
+            </div>
             {isLoading ? (
                 <Loader />
             ) : (

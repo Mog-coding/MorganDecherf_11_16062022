@@ -1,13 +1,27 @@
 .hostContainer {
     display: flex;
+    align-items: center;
 }
 .hostName {
+    text-align: end;
     font-size: 0.82em;
     width: 65px;
-    margin: 0px;
+    margin: 0px 10px 0 0;
 }
 .hostImg {
     height: 33px;
     width: 33px;
     border-radius: 50%;
+}
+
+/* medias queries */
+@media screen and (min-width: 1000px) {
+    .hostName {
+        font-size: 1.2em;
+        width: 108px;
+    }
+    .hostImg {
+        height: 64px;
+        width: 64px;
+    }
 }
