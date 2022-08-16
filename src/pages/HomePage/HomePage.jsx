@@ -8,8 +8,8 @@ import LocationCard from '../../components/LocationCard/LocationCard';
 import imgBanHome from '../../assets/homePage_banner.jpg';
 
 function HomePage() {
+    // utilisation custom hook useFetch
     const { data, isLoading, error } = useFetch('/location.json');
-    console.log('homePage data', data);
 
     if (error) {
         return <div> Erreur fetch </div>;

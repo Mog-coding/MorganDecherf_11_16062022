@@ -2,10 +2,12 @@ import './DropdownComponent.css';
 import chevron from '../../assets/icon/chevron.svg';
 
 function DropdownComponent({ heading, content }) {
-    function toggleDropdown(para) {
+
+    // fait apparaitre/disparaitre contenu du dropdown + rotation chevron 
+    function toggleDropdown(nodeDropHeading) {
         // sélection contenu et icon du dropdown
-        const dropContent = para.parentElement.nextElementSibling;
-        const dropIcon = para.previousElementSibling;
+        const dropContent = nodeDropHeading.parentElement.nextElementSibling;
+        const dropIcon = nodeDropHeading.previousElementSibling;
 
         if (dropContent.classList.contains('hide')) {
             dropContent.classList.remove('hide');
