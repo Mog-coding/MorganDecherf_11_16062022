@@ -28,6 +28,9 @@ root.render(
             <Route path="/404">
                 <Error404 />
             </Route>
+            <Route>
+                <Error404 />
+            </Route>
         </Switch>
         <Footer />
     </Router>

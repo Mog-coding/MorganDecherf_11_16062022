@@ -30,7 +30,7 @@ function HousingPage() {
         <>
             {isLoading ? (
                 <Loader />
-            ) : (
+            ) : locationData ? (
                 <div>
                     <CarouselComponent locationImgArr={locationData.pictures} />
 
@@ -80,16 +80,11 @@ function HousingPage() {
                         </div>
                     </section>
                 </div>
+            ) : (
+                <Navigate path="/404" />
             )}
         </>
     );
 }
 
 export default HousingPage;
-
-// {Object.entries(locationData).length !== 0 ? (
-//     <HostComponent
-//         renterName={locationData.host.name}
-//         renterImg={locationData.host.picture}
-//     />
-// ) : null}
