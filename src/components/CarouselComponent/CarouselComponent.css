@@ -29,6 +29,9 @@
     right: 0px;
     padding: 30px 6px 30px 30px;
 }
+.locationCount {
+    display: none;
+}
 
 /* medias queries */
 @media screen and (min-width: 1000px) {
@@ -50,5 +53,13 @@
         height: 80px;
         top: 139px;
         right: 16px;
+    }
+    .locationCount {
+        display: block;
+        position: absolute;
+        left: 48%;
+        bottom: 30px;
+        font-size: 1.2em;
+        color: white;
     }
 }

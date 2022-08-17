@@ -5,18 +5,20 @@ import vectorLeft from '../../assets/icon/vectorLeft.svg';
 import vectorRight from '../../assets/icon/vectorRight.svg';
 
 export default function CarouselComponent({ locationImgArr }) {
+    
     const [locationImg, updatelocationImg] = useState(locationImgArr[0]);
+
+    // si une seule image, supression chevrons next, previous
     const chevronL = useRef();
     const chevronR = useRef();
 
-    // si une seule image, supression chevrons next, previous
     useEffect(() => {
         const elChevronL = chevronL.current;
         const elChevronR = chevronR.current;
         if (locationImgArr.length === 1) {
             elChevronL.classList.add('hide');
             elChevronR.classList.add('hide');
-        }        
+        }
     });
 
     return (
@@ -29,9 +31,7 @@ export default function CarouselComponent({ locationImgArr }) {
                     updatelocationImg(
                         locationImgArr.indexOf(locationImg) === 0
                             ? locationImgArr[locationImgArr.length - 1]
-                            : locationImgArr[
-                                  locationImgArr.indexOf(locationImg) - 1
-                              ]
+                            : locationImgArr[locationImgArr.indexOf(locationImg) - 1]
                     )
                 }
             >
@@ -42,17 +42,19 @@ export default function CarouselComponent({ locationImgArr }) {
                 className="vectorRight"
                 onClick={() =>
                     updatelocationImg(
-                        locationImgArr.indexOf(locationImg) ===
-                            locationImgArr.length - 1
+                        locationImgArr.indexOf(locationImg) === locationImgArr.length - 1
                             ? locationImgArr[0]
-                            : locationImgArr[
-                                  locationImgArr.indexOf(locationImg) + 1
-                              ]
+                            : locationImgArr[locationImgArr.indexOf(locationImg) + 1]
                     )
                 }
             >
                 <img src={vectorRight} alt="" />
             </div>
+            <div className="locationCount">
+                    {
+                        (locationImgArr.indexOf(locationImg) + 1) + "/" + locationImgArr.length
+                    }
+                </div>
         </section>
     );
 }

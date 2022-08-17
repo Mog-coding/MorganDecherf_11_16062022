@@ -1,5 +1,4 @@
-import { useParams } from 'react-router-dom';
-import { Navigate } from 'react';
+import { useParams, Redirect } from 'react-router-dom';
 import { useFetch } from '../../utils/customHook/useFetch/useFetch';
 import { Loader } from '../../utils/style/Loader/Loader';
 
@@ -16,13 +15,14 @@ function HousingPage() {
     const { data, isLoading, error } = useFetch('/location.json');
 
     // si chargement fetch terminé, sélection location via id de l'url
-    let locationData = data;
+    let locationData;
 
-    if (!isLoading) {
+    if (data && data.length) {
         locationData = data.find((para) => {
             return para.id === id;
         });
     }
+    console.log("data:", locationData)
 
     if (error) {
         return <div> Erreur fetch </div>;
@@ -86,7 +86,7 @@ function HousingPage() {
                         </section>
                     </div>
                 ) : (
-                    <Navigate path="/404" />
+                    <Redirect to="/404" />
                 )
             }
         </>
