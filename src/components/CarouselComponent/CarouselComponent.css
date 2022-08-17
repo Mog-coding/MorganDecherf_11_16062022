@@ -11,18 +11,18 @@
     width: 100%;
     border-radius: 12px;
 }
-.vectorLeft,
-.vectorRight {
+.chevronLeft,
+.chevronRight {
     position: absolute;
 }
-.vectorLeft {
+.chevronLeft {
     width: 12px;
     height: 20px;
     top: 98px;
     left: 0px;
     padding: 30px 30px 30px 6px;
 }
-.vectorRight {
+.chevronRight {
     width: 12px;
     height: 20px;
     top: 98px;
@@ -42,13 +42,13 @@
     .carouselImg {
         border-radius: 27px;
     }
-    .vectorLeft {
+    .chevronLeft {
         width: 50px;
         height: 80px;
         top: 139px;
         left: 16px;
     }
-    .vectorRight {
+    .chevronRight {
         width: 50px;
         height: 80px;
         top: 139px;
@@ -61,5 +61,8 @@
         bottom: 30px;
         font-size: 1.2em;
         color: white;
+    }
+    .locationCount.hide {
+        display: none;
     }
 }

@@ -1,23 +1,27 @@
 import { useState, useRef, useEffect } from 'react';
 
 import './CarouselComponent.css';
-import vectorLeft from '../../assets/icon/vectorLeft.svg';
-import vectorRight from '../../assets/icon/vectorRight.svg';
+import chevronLeft from '../../assets/icon/vectorLeft.svg';
+import chevronRight from '../../assets/icon/vectorRight.svg';
 
 export default function CarouselComponent({ locationImgArr }) {
     
     const [locationImg, updatelocationImg] = useState(locationImgArr[0]);
 
-    // si une seule image, supression chevrons next, previous
+    // si une seule image, supression chevrons next, previous, compteur
     const chevronL = useRef();
     const chevronR = useRef();
+    const count = useRef();
 
     useEffect(() => {
         const elChevronL = chevronL.current;
         const elChevronR = chevronR.current;
+        const elCount = count.current;
+
         if (locationImgArr.length === 1) {
             elChevronL.classList.add('hide');
             elChevronR.classList.add('hide');
+            elCount.classList.add('hide');
         }
     });
 
@@ -26,7 +30,7 @@ export default function CarouselComponent({ locationImgArr }) {
             <img className="carouselImg" src={locationImg} alt={locationImg} />
             <div
                 ref={chevronL}
-                className="vectorLeft"
+                className="chevronLeft"
                 onClick={() =>
                     updatelocationImg(
                         locationImgArr.indexOf(locationImg) === 0
@@ -35,11 +39,11 @@ export default function CarouselComponent({ locationImgArr }) {
                     )
                 }
             >
-                <img src={vectorLeft} alt="" />
+                <img src={chevronLeft} alt="" />
             </div>
             <div
                 ref={chevronR}
-                className="vectorRight"
+                className="chevronRight"
                 onClick={() =>
                     updatelocationImg(
                         locationImgArr.indexOf(locationImg) === locationImgArr.length - 1
@@ -48,9 +52,9 @@ export default function CarouselComponent({ locationImgArr }) {
                     )
                 }
             >
-                <img src={vectorRight} alt="" />
+                <img src={chevronRight} alt="" />
             </div>
-            <div className="locationCount">
+            <div className="locationCount" ref={count}>
                     {
                         (locationImgArr.indexOf(locationImg) + 1) + "/" + locationImgArr.length
                     }
